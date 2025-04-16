@@ -36,7 +36,10 @@ public class Utente {
     public void setCognome(String newCognome) {Cognome = newCognome;}
 
     public String getUsername() { return Username; }
-    public void setUsername(String newUsername) {Username = newUsername;}
+    public void setUsername(String newUsername) {
+        Username = newUsername;
+        //c'è da fare la ricerca per sostituire la password
+    }
 
     public String getPassword() { return DecifraPassword(Password);}
     public void setPassword(String newPassword){Password = CifraPassword(newPassword);}

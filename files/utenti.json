@@ -1,13 +1,4 @@
 [{"Username":"GiuseppeVerdi","Ruolo":"Ristoratore","Nome":"Giuseppe","Domicilio":"Via Roma 1","Cognome":"Verdi","DataDiNascita":"1990-01-01","Password":"GiuseppeVerdi"},
 {"Username":"MarioRossi","Ruolo":"Cliente","Nome":"Mario","Domicilio":"Via Milano 2","Cognome":"Rossi","DataDiNascita":"1995-02-02","Password":"MarioRossi"},
-{"Username":"LuigiBianchi","Ruolo":"Ristoratore","Nome":"Luigi","Domicilio":"Via Napoli 3","Cognome":"Bianchi","DataDiNascita":"1998-03-03","Password":"LuigiBianchi"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"},
-{"Username":"masafsfario.f","Ruolo":"Ristoratore","Nome":"Gino","Domicilio":"Via Roma 1, Milano","Cognome":"Apao","DataDiNascita":"1985-05-15","Password":"password123"}]
+{"Username":"Seme","Ruolo":"BOH","Nome":"Francesco","Domicilio":"Via dalle palle","Cognome":"Semenzato","DataDiNascita":"2025-04-16","Password":"ZxwhyZhth7184\"^"},
+{"Username":"Seme","Ruolo":"BOH","Nome":"Francesco","Domicilio":"Via dalle palle","Cognome":"Semenzato","DataDiNascita":"2025-04-16","Password":"ZxwhyZhth7184\"^"}]
