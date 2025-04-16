@@ -1,10 +1,3 @@
-//mac
-// javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint:unchecked src/*.java
-// java -cp "lib/json-simple-1.1.1.jar:bin" src.Main     
-//windows
-// javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint;unchecked src/*.java
-// java -cp "lib/json-simple-1.1.1.jar;bin" src.Main   
-
 package src;
 
 import java.io.BufferedReader;
@@ -18,7 +11,6 @@ import org.json.simple.parser.ParseException;
 public class Main {
     public static void main(String[] args) {
         String path = "files/csvjson.json";
-        String riga;
         int j=0;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             JSONParser parser = new JSONParser();

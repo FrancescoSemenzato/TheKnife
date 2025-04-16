@@ -115,7 +115,6 @@ public class Utente {
                 pswCifrata += (char) (c + 1);
             }
         }
-    
         return pswCifrata;
     }
 
