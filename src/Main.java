@@ -1,5 +1,4 @@
 package src;
-import src.Utenti;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,7 +9,7 @@ public class Main {
         String path = "FileProva.csv";
         String riga;
         int j=0;
-        Utenti utente1 = new Utenti(
+        Utente utente1 = new Utente(
             "Mario", 
             "Rossi", 
             "mario.rossi", 
