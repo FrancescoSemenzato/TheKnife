@@ -1,9 +1,9 @@
+package src;
 import java.time.LocalDate;
 
 public class Utenti {
     private String Nome, Cognome,Username, Password, Domicilio, Ruolo;
     private LocalDate DataDiNascita;
-    private boolean registrato; 
 
     public Utenti(String Nome, String Cognome, String Username, String Password, String Domicilio, String Ruolo, LocalDate DataDiNascita) {
         this.Nome = Nome;
@@ -13,34 +13,19 @@ public class Utenti {
         this.Domicilio = Domicilio;
         this.Ruolo = Ruolo;
         this.DataDiNascita = DataDiNascita;
-        this.registrato = true;
     }
 
-    public String getNome() {
-        return Nome;
-    }
+    public String getNome() { return Nome; }
 
-    public String getCognome() {
-        return Cognome;
-    }
+    public String getCognome() { return Cognome; }
 
-    public String getUsername() {
-        return Username;
-    }
+    public String getUsername() { return Username; }
 
-    public String getPassword() {
-        return Password;
-    }
+    public String getPassword() { return Password; }
 
-    public String getDomicilio() {
-        return Domicilio;
-    }
+    public String getDomicilio() { return Domicilio; }
 
-    public String getRuolo() {
-        return Ruolo;
-    }
+    public String getRuolo() { return Ruolo; }
 
-    public LocalDate getDataDiNascita() {
-        return DataDiNascita;
-    }
+    public LocalDate getDataDiNascita() { return DataDiNascita; }
 }
