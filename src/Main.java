@@ -1,5 +1,9 @@
+//mac
 // javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint:unchecked src/*.java
 // java -cp "lib/json-simple-1.1.1.jar:bin" src.Main     
+//windows
+// javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint;unchecked src/*.java
+// java -cp "lib/json-simple-1.1.1.jar;bin" src.Main   
 
 package src;
 import java.io.BufferedReader;
