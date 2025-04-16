@@ -1,6 +1,9 @@
 package src;
 
 import java.time.LocalDate;
+
+import javax.xml.crypto.Data;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,7 +22,7 @@ public class Utente {
         this.Nome = Nome;
         this.Cognome = Cognome;
         this.Username = Username;
-        this.Password = Password;
+        this.Password = CifraPassword(Password);
         this.Domicilio = Domicilio;
         this.Ruolo = Ruolo;
         this.DataDiNascita = DataDiNascita;
@@ -27,18 +30,25 @@ public class Utente {
     }
 
     public String getNome() { return Nome; }
+    public void setNome(String newNome) {Nome = newNome;}
 
     public String getCognome() { return Cognome; }
+    public void setCognome(String newCognome) {Cognome = newCognome;}
 
     public String getUsername() { return Username; }
+    public void setUsername(String newUsername) {Username = newUsername;}
 
-    public String getPassword() { return Password; }
+    public String getPassword() { return DecifraPassword(Password);}
+    public void setPassword(String newPassword){Password = CifraPassword(newPassword);}
 
-    public String getDomicilio() { return Domicilio; }
+    public String getDomicilio() { return Domicilio;}
+    public void setDomicilio(String newDomicilio){ Domicilio = newDomicilio;}
 
     public String getRuolo() { return Ruolo; }
+    public void setRuolo(String newRuolo){ Ruolo = newRuolo;}
 
     public LocalDate getDataDiNascita() { return DataDiNascita; }
+    public void setDataDiNascita(LocalDate newDataDiNascita){ DataDiNascita = newDataDiNascita;}
 
     private void aggiungiAJson() {
         String filePath = "files/utenti.json";
@@ -77,5 +87,65 @@ public class Utente {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static String CifraPassword(String psw) {
+        String pswCifrata = "";
+    
+        for (int i = 0; i < psw.length(); i++) {
+            char c = psw.charAt(i);
+    
+            if (Character.isAlphabetic(c)) {
+                // Se vocale
+                if ("AEIOUaeiou".indexOf(c) != -1)
+                    pswCifrata += (char) (c + 3);
+                else
+                    pswCifrata += (char) (c + 7);
+            } 
+            else if (Character.isDigit(c)) {
+                int valore = Character.getNumericValue(c);
+                if (valore % 2 == 0) {
+                    valore = (valore + 10 - 3) % 10;
+                } else {
+                    valore = (valore + 10 - 7) % 10;
+                }
+                pswCifrata += (char) ('0' + valore);
+            } 
+            else {
+                pswCifrata += (char) (c + 1);
+            }
+        }
+    
+        return pswCifrata;
+    }
+
+    private static String DecifraPassword(String pswCifrata) {
+        String pswDecifrata = "";
+    
+        for (int i = 0; i < pswCifrata.length(); i++) {
+            char c = pswCifrata.charAt(i);
+    
+            if (Character.isAlphabetic(c)) {
+                if ("AEIOUaeiou".indexOf((char)(c - 3)) != -1)
+                    pswDecifrata += (char) (c - 3);
+                else
+                    pswDecifrata += (char) (c - 7);
+            } 
+            else if (Character.isDigit(c)) {
+                int valore = Character.getNumericValue(c);
+                // Per decifrare devo invertire il modulo di prima
+                if ((valore + 3) % 2 == 0) {
+                    valore = (valore + 3) % 10;
+                } else {
+                    valore = (valore + 7) % 10;
+                }
+                pswDecifrata += (char) ('0' + valore);
+            } 
+            else {
+                pswDecifrata += (char) (c - 1);
+            }
+        }
+    
+        return pswDecifrata;
     }
 }
