@@ -1,3 +1,6 @@
+// javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint:unchecked src/*.java
+// java -cp "lib/json-simple-1.1.1.jar:bin" src.Main     
+
 package src;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,12 +13,12 @@ public class Main {
         String riga;
         int j=0;
         Utente utente1 = new Utente(
-            "Mario", 
-            "Rossi", 
-            "mario.rossi", 
+            "Gino", 
+            "Apao", 
+            "masafsfario.f", 
             "password123", 
             "Via Roma 1, Milano", 
-            "Cliente", 
+            "Ristoratore", 
             LocalDate.of(1985, 5, 15)
         );
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {

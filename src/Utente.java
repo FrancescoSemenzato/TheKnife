@@ -1,15 +1,18 @@
 package src;
-import java.time.LocalDate;
 
+import java.time.LocalDate;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 public class Utente {
-    private String Nome, Cognome,Username, Password, Domicilio, Ruolo;
+    private String Nome, Cognome, Username, Password, Domicilio, Ruolo;
     private LocalDate DataDiNascita;
 
     public Utente(String Nome, String Cognome, String Username, String Password, String Domicilio, String Ruolo, LocalDate DataDiNascita) {
@@ -38,15 +41,21 @@ public class Utente {
     public LocalDate getDataDiNascita() { return DataDiNascita; }
 
     private void aggiungiAJson() {
-        try {
-            String filePath = "TheKnife/utenti.json";
-            JSONArray utentiArray;
+        String filePath = "files/utenti.json";
+        JSONArray utentiArray = new JSONArray();
 
+        try {
             if (Files.exists(Paths.get(filePath))) {
                 String content = new String(Files.readAllBytes(Paths.get(filePath)));
-                utentiArray = new JSONArray(content);
-            } else {
-                utentiArray = new JSONArray();
+                if (!content.isBlank()) {
+                    try {
+                        JSONParser parser = new JSONParser();
+                        utentiArray = (JSONArray) parser.parse(content);
+                    } catch (ParseException e) {
+                        // Se il file è corrotto o malformato, lo sovrascriviamo con un nuovo array
+                        utentiArray = new JSONArray();
+                    }
+                }
             }
 
             JSONObject nuovoUtente = new JSONObject();
@@ -58,10 +67,11 @@ public class Utente {
             nuovoUtente.put("Ruolo", Ruolo);
             nuovoUtente.put("DataDiNascita", DataDiNascita.toString());
 
-            utentiArray.put(nuovoUtente);
+            utentiArray.add(nuovoUtente);
 
+            Files.createDirectories(Paths.get("files"));
             try (FileWriter file = new FileWriter(filePath)) {
-                file.write(utentiArray.toString(4)); // Indent with 4 spaces for readability
+                file.write(utentiArray.toJSONString().replace("},", "},\n"));
             }
 
         } catch (IOException e) {
