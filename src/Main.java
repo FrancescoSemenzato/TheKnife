@@ -1,15 +1,11 @@
-//mac
-// javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint:unchecked src/*.java
-// java -cp "lib/json-simple-1.1.1.jar:bin" src.Main     
-//windows
-// javac -cp "lib/json-simple-1.1.1.jar" -d bin -Xlint;unchecked src/*.java
-// java -cp "lib/json-simple-1.1.1.jar;bin" src.Main   
-
 package src;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -17,8 +13,7 @@ import org.json.simple.parser.ParseException;
 
 public class Main {
     public static void main(String[] args) {
-        String path = "files/csvjson.json";
-        String riga;
+        /*String path = "files/csvjson.json";
         int j=0;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             JSONParser parser = new JSONParser();
@@ -49,6 +44,10 @@ public class Main {
             }
         } catch (IOException | ParseException e) {
             e.printStackTrace();
+            }*/
+
+            Utente u = new Utente("Francesco", "Semenzato", "Seme", "SuperSeme0451!]", "Via dalle palle", "BOH", LocalDate.of(2005, 06, 20));
+
+            u.setPassword("CambioPassword");
         }
-    }
 }
