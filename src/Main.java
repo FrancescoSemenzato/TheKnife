@@ -3,8 +3,11 @@ package src;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -46,8 +49,36 @@ public class Main {
             e.printStackTrace();
             }*/
 
-            Utente u = new Utente("Francesco", "Semenzato", "Seme", "SuperSeme0451!]", "Via dalle palle", "BOH", LocalDate.of(2005, 06, 20));
+            /*Utente u = new Utente("Francesco", "Semenzato", "Seme", "SuperSeme0451!]", "Via dalle palle", "BOH", LocalDate.of(2005, 06, 20));
 
-            u.setPassword("CambioPassword");
+            u.setPassword("CambioPassword");*/
+
+        String filePath = "files/utenti.json";
+        ArrayList <JSONArray> list = new ArrayList<>();
+        JSONArray utentiArray = new JSONArray();
+        String content = "";
+
+        try {
+            if (Files.exists(Paths.get(filePath))) { //controlla se esiste il file
+                content = new String(Files.readAllBytes(Paths.get(filePath))); //salva il file in una stringa
+                if (!content.isBlank()) { //se non è vuoto
+                    try {
+                        JSONParser parser = new JSONParser();
+                        utentiArray = (JSONArray) parser.parse(content); //converte il testo JSON in un JSONArray
+                    } catch (ParseException e) {
+                        // Se il file è corrotto, lo sovrascriviamo con un nuovo array
+                        utentiArray = new JSONArray();
+                    }
+                }
+            }
+            for(int i=0; i < utentiArray.size(); i++){
+                list.add(i, utentiArray);
+            }
+            System.out.println(list);
+            
         }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 }
