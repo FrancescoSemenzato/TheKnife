@@ -41,7 +41,7 @@ public class Utente {
     public String getPassword() { return DecifraPassword(Password);}
     public void setPassword(String newPassword){
         Password = CifraPassword(newPassword);
-        //c'è da fare la ricerca per sostituire la password
+        
     }
 
     public String getDomicilio() { return Domicilio;}
