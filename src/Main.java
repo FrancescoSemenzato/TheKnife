@@ -71,10 +71,10 @@ public class Main {
                     }
                 }
             }
-            for(int i=0; i < utentiArray.size(); i++){
-                list.add(i, utentiArray);
+            for(Object utente : utentiArray) {
+                JSONObject nuovoUtente = (JSONObject) utente;
+                System.out.println(nuovoUtente.get("Username"));
             }
-            System.out.println(list);
             
         }
         catch(IOException e){
