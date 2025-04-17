@@ -36,13 +36,13 @@ public class Utente {
     public void setCognome(String newCognome) {Cognome = newCognome;}
 
     public String getUsername() { return Username; }
-    public void setUsername(String newUsername) {
-        Username = newUsername;
-        //c'è da fare la ricerca per sostituire la password
-    }
+    public void setUsername(String newUsername) {Username = newUsername;}
 
     public String getPassword() { return DecifraPassword(Password);}
-    public void setPassword(String newPassword){Password = CifraPassword(newPassword);}
+    public void setPassword(String newPassword){
+        Password = CifraPassword(newPassword);
+        //c'è da fare la ricerca per sostituire la password
+    }
 
     public String getDomicilio() { return Domicilio;}
     public void setDomicilio(String newDomicilio){ Domicilio = newDomicilio;}

@@ -46,7 +46,7 @@ public class Main {
             e.printStackTrace();
             }*/
 
-            Utente u = new Utente("Francesco", "Semenzato", "Seme", "SuperSeme0451!]", "Via dalle palle", "BOH", LocalDate.now());
+            Utente u = new Utente("Francesco", "Semenzato", "Seme", "SuperSeme0451!]", "Via dalle palle", "BOH", LocalDate.of(2005, 06, 20));
 
             u.setPassword("CambioPassword");
         }
